@@ -9,10 +9,9 @@ import prove from './prove.ts';
  * @throws If the condition is not met.
  *
  * @example
- * // Catch this error and display it to the user
  * validate(isSuccessResponse(response), "Uh-oh! Something went wrong. Please try again.")
  *
- * // OR
+ * @example
  * validate(phoneNumberRegex.test(phoneNumber), "Please enter a valid phone number.")
  */
 export default function validate(condition: unknown, message: string): asserts condition {
