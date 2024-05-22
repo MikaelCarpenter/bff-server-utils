@@ -1,8 +1,5 @@
 {
   "name": "@mikael/bff-server-utils",
   "version": "0.1.0",
-  "exports": "./src/mod.ts",
-  "imports": {
-    "tiny-invariant": "npm:tiny-invariant@1.3.3"
-  }
+  "exports": "./src/mod.ts"
 }

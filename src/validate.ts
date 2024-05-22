@@ -1,22 +1,26 @@
-import invariant from 'tiny-invariant';
+import prove from './prove.ts';
 
 /**
- * This uses `tiny-invariant` under the hood, but throws an Error with your message, because tiny-invariant strips that message in production.
- * This is useful for getting your message to the client.
+ * Validate user input or the result of a user action. If the input is invalid or the action is unsuccessful, throw an error to surface to the user.
  *
- * @param condition
- * @param message
+ * @param condition :: A condition that the input or action result must meet.
+ * @param message :: A message to display to the user if the condition is not met.
+ *
+ * @throws If the condition is not met.
+ *
+ * @example
+ * // Catch this error and display it to the user
+ * validate(isSuccessResponse(response), "Uh-oh! Something went wrong. Please try again.")
+ *
+ * // OR
+ * validate(phoneNumberRegex.test(phoneNumber), "Please enter a valid phone number.")
  */
 export default function validate(condition: unknown, message: string): asserts condition {
-  try {
-    invariant(condition);
-  } catch {
-    throw new ValidationError(message);
-  }
+  prove(condition, message, ValidationError);
 }
 
 /**
- * Thrown when we've explicitly tried to assert state that our program requires to be true and it was false.
+ * An error that is meant to be surfaced to the user.
  */
 export class ValidationError extends Error {
   constructor(message: string) {
