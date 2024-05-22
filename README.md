@@ -11,5 +11,5 @@ npx jsr add @mikael/bff-server-utils
 ```ts
 import { prove } from "@mikael/bff-server-utils";
 
-prove(typeof email === "string", "CLIENT_ID is required.")
+prove(typeof email === "string", "Email must be a string.")
 ```
