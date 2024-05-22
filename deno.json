@@ -1,6 +1,6 @@
 {
   "name": "@mikael/bff-server-utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "exports": "./src/mod.ts",
   "imports": {
     "@mikael/prove": "jsr:@mikael/prove@^0.1.1"
