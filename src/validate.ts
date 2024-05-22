@@ -1,4 +1,4 @@
-import prove from './prove.ts';
+import prove from '@mikael/prove';
 
 /**
  * Validate user input or the result of a user action. If the input is invalid or the action is unsuccessful, throw an error to surface to the user.

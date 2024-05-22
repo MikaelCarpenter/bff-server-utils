@@ -9,7 +9,7 @@ npx jsr add @mikael/bff-server-utils
 
 **Use**
 ```ts
-import { prove } from "@mikael/bff-server-utils";
+import { validate } from "@mikael/bff-server-utils";
 
-prove(typeof email === "string", "Email must be a string.")
+validate(mobileNumberRegex.test(userMobileNumber), "Please use a valid phone number, 555-555-5555")
 ```
