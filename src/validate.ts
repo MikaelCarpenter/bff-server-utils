@@ -1,4 +1,4 @@
-import prove from '@mikael/prove';
+import prove from "@mikael/prove";
 
 /**
  * Validate user input or the result of a user action. If the input is invalid or the action is unsuccessful, throw an error to surface to the user.
@@ -14,7 +14,10 @@ import prove from '@mikael/prove';
  * @example
  * validate(phoneNumberRegex.test(phoneNumber), "Please enter a valid phone number.")
  */
-export default function validate(condition: unknown, message: string): asserts condition {
+export default function validate(
+  condition: unknown,
+  message: string,
+): asserts condition {
   prove(condition, message, ValidationError);
 }
 
@@ -24,6 +27,6 @@ export default function validate(condition: unknown, message: string): asserts c
 export class ValidationError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = 'ValidationError';
+    this.name = "ValidationError";
   }
 }
